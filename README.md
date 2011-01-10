@@ -15,11 +15,11 @@ Development / Testing
 
 A Rake task is available to get the latest orm_adapter specs:
 
-    rake :update_orm_specs
+    rake update_orm_specs
 
 To run the tests:
 
-    rake :spec
+    rake spec
 
 Copyright
 ---------

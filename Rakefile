@@ -71,11 +71,6 @@ namespace :release do
   task :pre => [:spec, :build] do
     git = Git.open('.')
 
-    if File.exists?("Gemfile.lock") && File.read("Gemfile.lock") != File.read("Gemfile.lock.development")
-      cp "Gemfile.lock", "Gemfile.lock.development"
-      raise "** Gemfile.lock.development has been updated, please commit these changes."
-    end
-
     if (git.status.changed + git.status.added + git.status.deleted).any?
       raise "** repo is not clean, try committing some files"
     end
