@@ -1,0 +1,16 @@
+# system crap
+.DS_Store
+
+# local ruby/gems dev stuff
+.rvmrc
+.bundle
+Gemfile.lock
+tmp
+
+# built docs
+.yardoc
+doc
+
+# built gems
+pkg
+*.gem
