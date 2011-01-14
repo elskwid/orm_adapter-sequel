@@ -1,3 +1,9 @@
-== 0.0.1
+== 0.0.2 (2011-01-14)
+
+  * Use Sequel Subclasses plugin to track descendents
+      http://sequel.rubyforge.org/rdoc-plugins/classes/Sequel/Plugins/Subclasses.html
+    Suggested by mooman [https://github.com/mooman]
+
+== 0.0.1 (2011-01-09)
 
   * Initial release [Don Morrison]
