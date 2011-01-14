@@ -3,24 +3,13 @@ require 'sequel'
 class Sequel::Model
   extend OrmAdapter::ToAdapter
   plugin :active_model
-
-  # Sequel: track models that inherit from Sequel::Model
-  #         .descendants is used in Rails 3 and DM
-  def self.descendants
-    @@descendants ||= []
-  end
-
-  # Sequel: hook to track descendants
-  def self.inherited(subclass)
-    super
-    descendants << subclass unless descendants.include?(subclass)
-  end
+  plugin :subclasses
 
   class OrmAdapter < ::OrmAdapter::Base
 
     # Gets a list of the available models for this adapter
     def self.model_classes
-      ::Sequel::Model.descendants
+      Sequel::Model.descendents
     end
 
     def initialize(klass)
