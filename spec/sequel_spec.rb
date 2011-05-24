@@ -44,6 +44,15 @@ else
         end
       end
 
+      describe "OrmAdapter instance" do
+        subject { User.to_adapter }
+
+        specify "#find_first should allow conditon keys to be strings" do
+          u = User.create(:name => 'test*', :rating => 1)
+          subject.find_first(:conditions => { 'name' => 'test*' }).should == u
+        end
+      end
+
       it_should_behave_like "example app with orm_adapter" do
         let(:user_class) { User }
         let(:note_class) { Note }
