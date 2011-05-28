@@ -106,6 +106,9 @@ class Sequel::Model
 
       def conditions_to_hash(conditions)
         conditions.inject({}) do |cond_hash, (col, value)|
+          # make sure the key is a symbol
+          col = col.to_sym
+
           if value.is_a?(Sequel::Model)
             # look up the column name for the assoc
             key = klass.association_reflection(col)[:key]
