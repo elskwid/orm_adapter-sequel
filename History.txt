@@ -1,3 +1,8 @@
+== 0.0.3 (2011-05-28)
+
+  * Allow condition keys to be strings (for Devise compat.)
+    Pull request by mooman [https://github.com/mooman]
+    
 == 0.0.2 (2011-01-14)
 
   * Use Sequel Subclasses plugin to track descendents
