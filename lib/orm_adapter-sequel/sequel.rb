@@ -59,7 +59,7 @@ class Sequel::Model
     #
     # Sequel: #.order doesn't like an array hence the *
     def find_first(options)
-      conditions, order = extract_conditions_and_order!(options)
+      conditions, order = extract_conditions!(options)
       klass.filter(conditions_to_hash(conditions)).order(*order_clause(order)).first
     end
 
@@ -68,7 +68,7 @@ class Sequel::Model
     #
     # Sequel: #.order doesn't like an array hence the *
     def find_all(options)
-      conditions, order = extract_conditions_and_order!(options)
+      conditions, order = extract_conditions!(options)
       klass.filter(conditions_to_hash(conditions)).order(*order_clause(order)).all
     end
 
