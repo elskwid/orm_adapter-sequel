@@ -1,4 +1,6 @@
-## 0.1.0 (unreleased)
+## 0.1.1 (unreleased)
+
+## 0.1.0 (2013-03-19)
 
 * History.txt -> CHANGELOG.md
 
